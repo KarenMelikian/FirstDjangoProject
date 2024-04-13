@@ -70,7 +70,7 @@ class GroupDetailsView(LoginRequiredMixin, DetailView):
     context_object_name = 'group'
 
 
-class ProductCreateView(LoginRequiredMixin, CreateView):
+class ProductCreateView(UserPassesTestMixin, LoginRequiredMixin, CreateView):
     def test_func(self):
         return self.request.user.is_superuser
 
@@ -89,7 +89,7 @@ class OrderCreateView(LoginRequiredMixin, CreateView):
 
 
 
-class GroupCreateView(LoginRequiredMixin, CreateView):
+class GroupCreateView(UserPassesTestMixin, LoginRequiredMixin, CreateView):
     def test_func(self):
         return self.request.user.is_superuser
 
@@ -99,7 +99,7 @@ class GroupCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('groups')
 
 
-class ProductUpdateView(LoginRequiredMixin, UpdateView):
+class ProductUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
     def test_func(self):
         return self.request.user.is_superuser
 
@@ -114,7 +114,7 @@ class ProductUpdateView(LoginRequiredMixin, UpdateView):
         )
 
 
-class OrderUpdateView(LoginRequiredMixin, UpdateView):
+class OrderUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
     def test_func(self):
         return self.request.user.is_superuser
 
@@ -130,7 +130,7 @@ class OrderUpdateView(LoginRequiredMixin, UpdateView):
 
 
 
-class GroupUpdateView(LoginRequiredMixin, UpdateView):
+class GroupUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
     def test_func(self):
         return self.request.user.is_superuser
 
@@ -147,7 +147,7 @@ class GroupUpdateView(LoginRequiredMixin, UpdateView):
 
 
 
-class ProductDeleteView(LoginRequiredMixin, DeleteView):
+class ProductDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
     def test_func(self):
         return self.request.user.is_superuser
 
@@ -156,7 +156,7 @@ class ProductDeleteView(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('products')
     template_name = 'shop/product_confirm_delete.html'
 
-class ProductArchiveView(LoginRequiredMixin, DeleteView):
+class ProductArchiveView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
     def test_func(self):
         return self.request.user.is_superuser
 
@@ -178,7 +178,7 @@ class OrderDeleteView(LoginRequiredMixin, DeleteView):
 
 
 
-class GroupDeleteView(LoginRequiredMixin, DeleteView):
+class GroupDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
     def test_func(self):
         return self.request.user.is_superuser
 

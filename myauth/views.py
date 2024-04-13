@@ -29,7 +29,7 @@ class UserLoginView(LoginView):
 class UserProfileView(LoginRequiredMixin, UpdateView):
     template_name = 'myauth/profile.html'
     model = User
-    fields = 'first_name', 'last_name', 'username', 'email', 'bio', 'age'
+    fields = 'first_name', 'last_name', 'username', 'email', 'bio', 'age', 'image'
 
     def get_success_url(self):
         return  f'/accounts/profile/{self.request.user.pk}/'

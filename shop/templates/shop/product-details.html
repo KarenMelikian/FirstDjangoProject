@@ -1,0 +1,43 @@
+{% extends 'shop/base.html' %}
+
+
+{% block title %}
+    Product {{ product.pk }}
+{% endblock %}
+
+
+{% block body %}
+    <h1> Product details </h1>
+    <li> Product: {{ product.name }} </li>
+    <ul>
+        <li> Description: {{ product.description }} </li>
+        <li> Price: ${{ product.price }} </li>
+        <li> Discount: {{ product.discount }}% </li>
+        <li> create date: {{ product.created_at }} </li>
+        {% if product.is_archived %}
+            <li> Product is archived </li>
+        {% else %}
+            <li> Product is not archived </li>
+        {% endif %}
+    </ul>
+    <div>
+        <a href="{% url 'products' %}">
+            Back to product list
+        </a>
+    </div>
+    <div>
+        <a href="{% url 'update_product' pk=product.pk %}">
+            Product update
+        </a>
+    </div>
+    <div>
+        <a href="{% url 'delete_product' pk=product.pk %}">
+            Product delete
+        </a>
+    </div>
+    <div>
+        <a href="{% url 'archive_product' pk=product.pk %}">
+            Product archive
+        </a>
+    </div>
+{% endblock %}

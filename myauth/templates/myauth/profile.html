@@ -1,0 +1,23 @@
+{% extends 'shop/base.html' %}
+
+
+{% block title%}
+    Profile
+{% endblock %}
+
+{% block body %}
+    <h1> Profile </h1>
+    <form method="post" action="{% url 'profile' pk=user.pk %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">
+            Save
+        </button>
+    </form>
+    <div>
+        <a href="{% url 'index' %}"> Main page </a>
+    </div>
+    <div>
+        <a href="{% url 'change_password' %}"> Change password </a>
+    </div>
+{% endblock %}

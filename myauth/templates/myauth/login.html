@@ -1,0 +1,36 @@
+{% extends 'shop/base.html' %}
+
+
+{% block title%}
+    Log in
+{% endblock %}
+
+{% block body %}
+    <h1> Log in </h1>
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if user.is_authenticated %}
+            <input type="hidden" name="next" value="{% url 'profile' pk=user.pk %}">
+        {% endif %}
+        <table>
+            <tr>
+                <td>
+                    <button type="submit"> Log in </button>
+                </td>
+                <td>
+                    |
+                </td>
+                <td>
+                    <a href="{% url 'reset_password' %}"> Forget password? </a>
+                </td>
+                <td>
+                    |
+                </td>
+                <td>
+                    <a href="{% url 'registration' %}"> Create new account </a>
+                </td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}

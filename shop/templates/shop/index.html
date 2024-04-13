@@ -1,0 +1,51 @@
+{% extends 'shop/base.html' %}
+
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block body %}
+    <div>
+        Runtime: {{ runtime }}
+    </div>
+    <div>
+        {% lorem 3 p random %}
+    </div>
+    {% if user.is_authenticated %}
+        <div>
+            <a href="{% url 'products' %}">
+                Go to view the list of products
+            </a>
+        </div>
+        <div>
+            <a href="{% url 'orders' %}">
+                Go to view the list of orders
+            </a>
+        </div>
+        <div>
+            <a href="{% url 'groups' %}">
+                Go to view the list of groups
+            </a>
+        </div>
+        <table>
+            <tr>
+                <td>
+                    <a href="{% url 'logout' %}"> Log out </a>
+                </td>
+                <td>
+                    |
+                </td>
+                <td>
+                    <a href="{% url 'profile' pk=user.pk %}"> Profile </a>
+                </td>
+            </tr>
+        </table>
+    {% else %}
+        <div>
+            <a href="{% url 'login' %}">
+                Log in
+            </a>
+        </div>
+    {% endif %}
+{% endblock %}

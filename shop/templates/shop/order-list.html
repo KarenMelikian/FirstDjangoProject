@@ -1,0 +1,32 @@
+{% extends 'shop/base.html' %}
+
+{% block title %}
+    Orders
+{% endblock %}
+
+{% block body %}
+    <h1> Order list </h1>
+    <ul>
+        {% for order in orders %}
+            {{ forloop.counter }})
+            <ul>
+                <li> Delivery address:
+                    <a href="{% url 'order_details' pk=order.pk %}">
+                    {{ order.delivery_address }}
+                </a>
+                </li>
+                <li> User: {{ order.user }} </li>
+            </ul>
+        {% endfor %}
+    </ul>
+    <div>
+        <a href="{% url 'create_order' %}">
+            Create new order
+        </a>
+    </div>
+    <div>
+        <a href="{% url 'index' %}">
+            Back to main page
+        </a>
+    </div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'shop/base.html' %}
+
+
+{% block title %}
+    Groups
+{% endblock %}
+
+{% block body %}
+    <h1> Group list </h1>
+    <ul>
+            Group name: <b> {{ group.name }} </b>
+            <ul>
+                {% for permission in group.permissions.all %}
+                    <li>
+                        {{ permission.name }} (<code> {{ permission.codename }} </code>)
+                    </li>
+                {% endfor %}
+            </ul>
+    </ul>
+    <div>
+        <a href="{% url 'groups' %}">
+            Back to group list
+        </a>
+    </div>
+    <div>
+        <a href="{% url 'update_group' pk=group.pk %}">
+            Group update
+        </a>
+    </div>    <div>
+        <a href="{% url 'delete_group' pk=group.pk %}">
+            Group Delete
+        </a>
+    </div>
+{% endblock %}

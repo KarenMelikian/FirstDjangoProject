@@ -1,0 +1,29 @@
+{% extends 'shop/base.html' %}
+
+
+{% block title %}
+    Groups
+{% endblock %}
+
+{% block body %}
+    <h1> Group list </h1>
+    <ul>
+        {% for group in groups %}
+            <p>
+                {{ forloop.counter }}) Group name: <b> <a href="{% url 'group_details' pk=group.pk %}">
+                {{ group.name }} </a> </b>
+            </p>
+
+        {% endfor %}
+    </ul>
+    <div>
+        <a href="{% url 'index' %}">
+            Back to main page
+        </a>
+    </div>
+    <div>
+        <a href="{% url 'create_group' %}">
+            Create new group
+        </a>
+    </div>
+{% endblock %}

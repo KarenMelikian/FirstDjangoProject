@@ -1,12 +1,12 @@
 {% extends 'shop/base.html' %}
-
+{% load i18n %}
 
 {% block title%}
-    Profile
+    {% translate 'Profile' %}
 {% endblock %}
 
 {% block body %}
-    <h1> Profile </h1>
+    <h1> {% translate 'Profile' %} </h1>
     <form method="post" action="{% url 'profile' pk=user.pk %}" enctype="multipart/form-data">
         {% if user.image %}
             <img src="{{ user.image.url }}" alt="{{ user.image.name }}">
@@ -14,13 +14,13 @@
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">
-            Save
+            {% translate 'Save' %}
         </button>
     </form>
     <div>
-        <a href="{% url 'index' %}"> Main page </a>
+        <a href="{% url 'index' %}"> {% translate 'Main page' %} </a>
     </div>
     <div>
-        <a href="{% url 'change_password' %}"> Change password </a>
+        <a href="{% url 'change_password' %}"> {% translate 'Change password' %} </a>
     </div>
 {% endblock %}

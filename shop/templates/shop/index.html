@@ -1,50 +1,56 @@
 {% extends 'shop/base.html' %}
-
+{% load i18n %}
 
 {% block title %}
     Index
 {% endblock %}
 
 {% block body %}
+    <h1> {{ hello }} </h1>
     <div>
-        Runtime: {{ runtime }}
+        {% translate 'Runtime' %}: {{ runtime }}
     </div>
+    <p></p>
     <div>
         {% lorem 3 p random %}
     </div>
+    <p></p>
     {% if user.is_authenticated %}
         <div>
             <a href="{% url 'products' %}">
-                Go to view the list of products
+                {% translate 'Go to view the list of products' %}
             </a>
         </div>
+        <p></p>
         <div>
             <a href="{% url 'orders' %}">
-                Go to view the list of orders
+                {% translate 'Go to view the list of orders' %}
             </a>
         </div>
+        <p></p>
         <div>
             <a href="{% url 'groups' %}">
-                Go to view the list of groups
+                {% translate 'Go to view the list of groups' %}
             </a>
         </div>
+       <p></p>
         <table>
             <tr>
                 <td>
-                    <a href="{% url 'logout' %}"> Log out </a>
+                    <a href="{% url 'logout' %}"> {% translate 'Log out' %} </a>
                 </td>
                 <td>
                     |
                 </td>
                 <td>
-                    <a href="{% url 'profile' pk=user.pk %}"> Profile </a>
+                    <a href="{% url 'profile' pk=user.pk %}"> {% translate 'Profile' %} </a>
                 </td>
             </tr>
         </table>
     {% else %}
         <div>
             <a href="{% url 'login' %}">
-                Log in
+                {% translate 'Log in' %}
             </a>
         </div>
     {% endif %}

@@ -1,0 +1,553 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-18 19:07+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: myauth/forms.py:9
+msgid "First Name"
+msgstr "Անուն"
+
+#: myauth/forms.py:10
+msgid "Last Name"
+msgstr "Ազգանուն"
+
+#: myauth/forms.py:11
+msgid "Email"
+msgstr "Էլ. փոսդ"
+
+#: myauth/models.py:10
+msgid "Bio"
+msgstr "Կենսագրություն"
+
+#: myauth/models.py:11
+msgid "Age"
+msgstr "Տարիք"
+
+#: myauth/models.py:12
+msgid "Image"
+msgstr "Նկար"
+
+#: myauth/templates/myauth/change_password.html:5
+#: myauth/templates/myauth/change_password.html:9
+#: myauth/templates/myauth/change_password_done.html:5
+#: myauth/templates/myauth/profile.html:24
+#: myauth/templates/myauth/reset_password.html:21
+msgid "Change password"
+msgstr "Փոխել գաղտնաբառը"
+
+#: myauth/templates/myauth/change_password.html:14
+msgid "Change"
+msgstr "Փոխել"
+
+#: myauth/templates/myauth/change_password.html:18
+#: myauth/templates/myauth/change_password_done.html:11
+#: myauth/templates/myauth/profile.html:21
+#: myauth/templates/myauth/registration.html:18
+#: myauth/templates/myauth/reset_password.html:18
+#: myauth/templates/myauth/reset_password_complete.html:11
+#: myauth/templates/myauth/reset_password_confirm.html:18
+#: myauth/templates/myauth/reset_password_done.html:12
+msgid "Main page"
+msgstr "Գլխավոր էջ"
+
+#: myauth/templates/myauth/change_password.html:21
+msgid "Back to profile page"
+msgstr "Վերադառնալ անձնական էջ"
+
+#: myauth/templates/myauth/change_password_done.html:9
+msgid "Your password successfully changed"
+msgstr "Ձեր գաղտնաբառը հաջողությամբ փոխվել է"
+
+#: myauth/templates/myauth/change_password_done.html:14
+#: myauth/templates/myauth/profile.html:5
+#: myauth/templates/myauth/profile.html:9
+#: myauth/templates/myauth/reset_password.html:5
+#: myauth/templates/myauth/reset_password.html:9
+#: myauth/templates/myauth/reset_password_complete.html:5
+#: myauth/templates/myauth/reset_password_confirm.html:5
+#: myauth/templates/myauth/reset_password_done.html:5
+#: shop/templates/shop/index.html:46
+msgid "Profile"
+msgstr "Անձնական տարածք"
+
+#: myauth/templates/myauth/login.html:5 myauth/templates/myauth/login.html:9
+#: myauth/templates/myauth/login.html:19
+#: myauth/templates/myauth/reset_password_complete.html:14
+#: myauth/templates/myauth/reset_password_confirm.html:21
+#: shop/templates/shop/index.html:53
+msgid "Log in"
+msgstr "Մուտք գործել"
+
+#: myauth/templates/myauth/login.html:25
+msgid "Forgot password?"
+msgstr "Մոռացել ե՞ք գաղտնաբառը"
+
+#: myauth/templates/myauth/login.html:31
+msgid "Create new account"
+msgstr "Ստեղծեք նոր անձնական էջ"
+
+#: myauth/templates/myauth/profile.html:17
+msgid "Save"
+msgstr "Պահպանել"
+
+#: myauth/templates/myauth/registration.html:5
+#: myauth/templates/myauth/registration.html:9
+#: myauth/templates/myauth/registration.html:14
+msgid "Registration"
+msgstr "Գրանցում"
+
+#: myauth/templates/myauth/registration.html:21
+msgid "Back to log in page"
+msgstr "Վերադառնալ մուտքի էջ"
+
+#: myauth/templates/myauth/reset_password.html:14
+#: myauth/templates/myauth/reset_password_confirm.html:14
+msgid "Reset"
+msgstr "Վերականգնել"
+
+#: myauth/templates/myauth/reset_password_complete.html:9
+msgid "Password successfully reset"
+msgstr "Ձեր գաղտնաբառը հաջողությամբ վերականգնված է"
+
+#: myauth/templates/myauth/reset_password_confirm.html:9
+msgid "Reset password"
+msgstr "Վերականգնել գաղտնաբառը"
+
+#: myauth/templates/myauth/reset_password_done.html:9
+msgid "Check your inbox"
+msgstr "Ստուգեք ձեր էլղ փոստը"
+
+#: myauth/templates/myauth/reset_password_done.html:10
+msgid ""
+"We\"ve emailed you instructions for setting your password. You should "
+"receive the email shortly"
+msgstr ""
+"Մենք ձեզ էլփոստով ուղարկել ենք ձեր գաղտնաբառը սահմանելու հրահանգները: "
+"Դուք պետք է շուտով ստանաք"
+
+#: mysite/settings.py:130
+msgid "Armenian"
+msgstr ""
+
+#: mysite/settings.py:131
+msgid "Russia"
+msgstr ""
+
+#: mysite/settings.py:132
+msgid "English"
+msgstr ""
+
+#: shop/models.py:8
+msgid "name"
+msgstr "Անուն"
+
+#: shop/models.py:9
+msgid "description"
+msgstr "Նկարագրություն"
+
+#: shop/models.py:10
+msgid "price"
+msgstr "Գին"
+
+#: shop/models.py:11
+msgid "discount"
+msgstr "Զեղչ"
+
+#: shop/models.py:12 shop/models.py:25
+msgid "created_at"
+msgstr "Ստեղծել"
+
+#: shop/models.py:13
+msgid "is_archived"
+msgstr "Ապրանքը արխիվացված է"
+
+#: shop/models.py:23
+msgid "delivery_address"
+msgstr "Առաքման հասցե"
+
+#: shop/models.py:24
+msgid "promocode"
+msgstr "Պրոմո կոդ"
+
+#: shop/templates/shop/create-group.html:5
+#: shop/templates/shop/group-details.html:5
+#: shop/templates/shop/group-list.html:5
+msgid "Groups"
+msgstr "Խմբեր"
+
+#: shop/templates/shop/create-group.html:9
+#: shop/templates/shop/group-list.html:35
+msgid "Create new group"
+msgstr "Ստեղծեք նոր խումբ"
+
+#: shop/templates/shop/create-group.html:14
+#: shop/templates/shop/create-order.html:15
+#: shop/templates/shop/create-product.html:15
+msgid "Create"
+msgstr "Ստեղծել"
+
+#: shop/templates/shop/create-group.html:19
+#: shop/templates/shop/group-details.html:21
+msgid "Back to group list"
+msgstr "Վերադառնալ խմբերի ցանկին"
+
+#: shop/templates/shop/create-order.html:5
+#: shop/templates/shop/create-order.html:10
+msgid "Create order"
+msgstr "Ստեղծեք պատվերը"
+
+#: shop/templates/shop/create-order.html:20
+#: shop/templates/shop/order-details.html:25
+msgid "Back to order list"
+msgstr "Վերադառնալ պատվերների ցանկին"
+
+#: shop/templates/shop/create-product.html:5
+#: shop/templates/shop/create-product.html:10
+msgid "Create product"
+msgstr "Ստեղծեք ապրանքը"
+
+#: shop/templates/shop/create-product.html:20
+#: shop/templates/shop/product-details.html:25
+msgid "Back to product list"
+msgstr "Վերադառնալ ապրանքների ցանկին"
+
+#: shop/templates/shop/group-details.html:10
+msgid "Group name"
+msgstr "Խմբի անունը"
+
+#: shop/templates/shop/group-details.html:27
+#: shop/templates/shop/group_update_form.html:5
+msgid "Group update"
+msgstr "Թարմացնել խումբը"
+
+#: shop/templates/shop/group-details.html:33
+msgid "Group Delete"
+msgstr "Ջնջել խումբը"
+
+#: shop/templates/shop/group-list.html:9
+msgid "Group list"
+msgstr "Իմ խմբերի ցանկը"
+
+#: shop/templates/shop/group-list.html:11
+#, python-format
+msgid ""
+"\n"
+"            There is only one group\n"
+"            "
+msgid_plural ""
+"\n"
+"            There is %(groups_count)s groups.\n"
+"        "
+msgstr[0] ""
+"\n"
+"            Հասանելի է %(groups_count)s խումբ.\n"
+"            "
+msgstr[1] ""
+"\n"
+"            Հասանելի է %(groups_count)s խումբ.\n"
+"            "
+
+#: shop/templates/shop/group-list.html:20
+msgid "Group name:"
+msgstr "Խմբի անունը"
+
+#: shop/templates/shop/group-list.html:28
+#: shop/templates/shop/order-list.html:46
+#: shop/templates/shop/product-list.html:43
+msgid "Back to main page"
+msgstr "Վերադառնալ գլխավոր էջ"
+
+#: shop/templates/shop/group-list.html:41
+msgid "Create your first group"
+msgstr "Ստեղծեք ձեր առաջին խումբը"
+
+#: shop/templates/shop/group_confirm_delete.html:5
+msgid "Group delete"
+msgstr "Ջնջել խումբը"
+
+#: shop/templates/shop/group_confirm_delete.html:10
+msgid "Deleting a group"
+msgstr "Խմբի ջնջում"
+
+#: shop/templates/shop/group_confirm_delete.html:12
+msgid "Are you sure you want to delete group"
+msgstr "Վստա՞հ եք, որ ցանկանում եք ջնջել խումբը"
+
+#: shop/templates/shop/group_confirm_delete.html:16
+#: shop/templates/shop/order_confirm_delete.html:16
+#: shop/templates/shop/product_confirm_delete.html:16
+msgid "Delete"
+msgstr "Ջնջել"
+
+#: shop/templates/shop/group_confirm_delete.html:21
+#: shop/templates/shop/group_update_form.html:19
+msgid "Back to group details"
+msgstr "Վերադառնալ խմբի մանրամասներին"
+
+#: shop/templates/shop/group_update_form.html:14
+#: shop/templates/shop/order_update_form.html:16
+#: shop/templates/shop/product_update_form.html:15
+msgid "Update"
+msgstr "Թարմացնել"
+
+#: shop/templates/shop/index.html:11
+msgid "Runtime"
+msgstr "Գործարկման ժամանակը"
+
+#: shop/templates/shop/index.html:21
+msgid "Go to view the list of products"
+msgstr "Դիտել ապրանքների ցանկը"
+
+#: shop/templates/shop/index.html:27
+msgid "Go to view the list of orders"
+msgstr "Դիտել պատվերների ցանկը"
+
+#: shop/templates/shop/index.html:33
+msgid "Go to view the list of groups"
+msgstr "Դիտել Խմբերի ցանկը"
+
+#: shop/templates/shop/index.html:40
+msgid "Log out"
+msgstr "Դուրս գալ"
+
+#: shop/templates/shop/order-details.html:5
+#: shop/templates/shop/order-details.html:10
+msgid "Order details"
+msgstr "Ապրանքի մանրամասները"
+
+#: shop/templates/shop/order-details.html:12
+#: shop/templates/shop/order-list.html:21
+msgid "Delivery address"
+msgstr "Առաքման հասցե"
+
+#: shop/templates/shop/order-details.html:13
+msgid "Promo code"
+msgstr "Պրոմո կոդ"
+
+#: shop/templates/shop/order-details.html:14
+#: shop/templates/shop/product-details.html:16
+msgid "Creation date"
+msgstr "Ստեղծման ժամանակը"
+
+#: shop/templates/shop/order-details.html:15
+#: shop/templates/shop/order-list.html:26
+msgid "User"
+msgstr "Օգտատեր"
+
+#: shop/templates/shop/order-details.html:16
+#: shop/templates/shop/product-list.html:5
+msgid "Products"
+msgstr "Ապրանքներ"
+
+#: shop/templates/shop/order-details.html:31
+msgid "Order update"
+msgstr "Թարմացնել ապրանքը"
+
+#: shop/templates/shop/order-details.html:37
+#: shop/templates/shop/order_confirm_delete.html:5
+msgid "Delete order"
+msgstr "Ջնջել պատվերը"
+
+#: shop/templates/shop/order-list.html:5
+msgid "Orders"
+msgstr "Պատվերներ"
+
+#: shop/templates/shop/order-list.html:9
+msgid "Order list"
+msgstr "Պատվերների ցանկ"
+
+#: shop/templates/shop/order-list.html:11
+#, python-format
+msgid ""
+"\n"
+"            There is only one order.\n"
+"            "
+msgid_plural ""
+"\n"
+"            There is %(orders_count)s orders.\n"
+"        "
+msgstr[0] ""
+"\n"
+"            Հասանելի է %(orders_count)s պատվեր.\n"
+"            "
+msgstr[1] ""
+"\n"
+"            Հասանելի է %(orders_count)s պատվեր.\n"
+"            "
+
+#: shop/templates/shop/order-list.html:33
+msgid "Create new order"
+msgstr "Ստեղծեք նոր պատվեր"
+
+#: shop/templates/shop/order-list.html:39
+msgid "Create your first order."
+msgstr "Ստեղծեք ձեր առաջին պատվերը"
+
+#: shop/templates/shop/order_confirm_delete.html:10
+msgid "Deleting an order"
+msgstr "Պատվերի ջնջում"
+
+#: shop/templates/shop/order_confirm_delete.html:11
+#: shop/templates/shop/product_confirm_delete.html:11
+msgid "Are you sure you want to delete"
+msgstr "Վստա՞հ եք, որ ցանկանում եք ջնջել"
+
+#: shop/templates/shop/order_confirm_delete.html:21
+#: shop/templates/shop/order_update_form.html:21
+msgid "Back to order details"
+msgstr "Վերադառնալ պատվերի մանրամասներին"
+
+#: shop/templates/shop/order_update_form.html:6
+#: shop/templates/shop/order_update_form.html:11
+msgid "Update order"
+msgstr "Թարմացնել պատվերը"
+
+#: shop/templates/shop/product-details.html:5
+#: shop/templates/shop/product-details.html:11
+#: shop/templates/shop/product-list.html:20
+msgid "Product"
+msgstr "Ապրանք"
+
+#: shop/templates/shop/product-details.html:10
+msgid "Product details"
+msgstr "Ապրանքի մանրամասները"
+
+#: shop/templates/shop/product-details.html:13
+msgid "Description"
+msgstr "Նկարագրություն"
+
+#: shop/templates/shop/product-details.html:14
+#: shop/templates/shop/product-list.html:23
+msgid "Price"
+msgstr "Գին"
+
+#: shop/templates/shop/product-details.html:15
+msgid "Discount"
+msgstr "Զեղչ"
+
+#: shop/templates/shop/product-details.html:18
+msgid "Product is archived"
+msgstr "Ապրանքը արխիվացված է"
+
+#: shop/templates/shop/product-details.html:20
+msgid "Product is not archived"
+msgstr "Ապրանքը արխիվացված է"
+
+#: shop/templates/shop/product-details.html:31
+#: shop/templates/shop/product_update_form.html:10
+msgid "Product update"
+msgstr "Թարմացնել ապրանքը"
+
+#: shop/templates/shop/product-details.html:37
+#: shop/templates/shop/product_confirm_delete.html:5
+msgid "Product delete"
+msgstr "Ջնջել ապրանքը"
+
+#: shop/templates/shop/product-details.html:43
+msgid "Product archive"
+msgstr "Արխիվացնել ապրանքը"
+
+#: shop/templates/shop/product-list.html:9
+msgid "My product list"
+msgstr "Իմ ապրանքների ցանկը"
+
+#: shop/templates/shop/product-list.html:11
+#, python-format
+msgid ""
+"\n"
+"            There is only one product.\n"
+"            "
+msgid_plural ""
+"\n"
+"            There are %(products_count)s products.\n"
+"        "
+msgstr[0] ""
+"\n"
+"            Հասանելի է %(products_count)s ապրանք.\n"
+"            "
+msgstr[1] ""
+"\n"
+"            Հասանելի է %(products_count)s ապրանք.\n"
+"            "
+
+#: shop/templates/shop/product-list.html:30
+msgid "Create new product"
+msgstr "Ստեղծեք նոր ապրանք"
+
+#: shop/templates/shop/product-list.html:36
+msgid "Create your first product"
+msgstr "Ստեղծեք ձեր առաջին ապրանքը"
+
+#: shop/templates/shop/product_confirm_archive.html:5
+msgid "Product Archive"
+msgstr "Ապրանքի արխիվացում"
+
+#: shop/templates/shop/product_confirm_archive.html:10
+msgid "Archiving a product"
+msgstr "Ապրանքի արխիվացում"
+
+#: shop/templates/shop/product_confirm_archive.html:11
+msgid "Are you sure you want to archive"
+msgstr "Վստա՞հ եք, որ ցանկանում եք արխիվացնել"
+
+#: shop/templates/shop/product_confirm_archive.html:16
+msgid "Archive"
+msgstr "Արխիվացնել"
+
+#: shop/templates/shop/product_confirm_archive.html:21
+#: shop/templates/shop/product_confirm_delete.html:21
+msgid "Back to product details"
+msgstr "Վերադառնալ ապրանքի մանրամասներին"
+
+#: shop/templates/shop/product_confirm_delete.html:10
+msgid "Deleting a product"
+msgstr "Ապրանքի ջնջում"
+
+#: shop/templates/shop/product_update_form.html:5
+msgid "Update product"
+msgstr "Թարմացնել ապրանքը"
+
+#: shop/views.py:20
+msgid "Welcome to my shop!"
+msgstr "Բարի գալուստ իմ խանութ!"
+
+#~ msgid "Order Delete"
+#~ msgstr "Ջնջել պատվերը"
+
+#~ msgid "Product Delete"
+#~ msgstr "Ապրանքի ջնջում"
+
+#~ msgid "Back to order"
+#~ msgstr "Վերադառնալ պատվերի մանրամսներին"
+
+#~ msgid "user"
+#~ msgstr "Օգտատեր"
+
+#~ msgid "products"
+#~ msgstr "Ապրանքներ"
+
+#~ msgid "permissions"
+#~ msgstr "Թույլտվություններ"
+
+#~| msgid "products"
+#~ msgid "product"
+#~ msgstr "Ապրանքներ"
+
+#~| msgid "Orders"
+#~ msgid "order"
+#~ msgstr "Պատվերներ"

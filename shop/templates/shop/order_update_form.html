@@ -1,24 +1,24 @@
 {% extends 'shop/base.html' %}
-
+{% load i18n %}
 
 
 {% block title %}
-    Update order
+    {% translate 'Update order' %}
 {% endblock %}
 
 
 {% block body %}
-    <h1> Update order </h1>
+    <h1> {% translate 'Update order' %} </h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">
-            Update
+            {% translate 'Update' %}
         </button>
     </form>
     <div>
         <a href="{% url 'order_details' pk=object.pk %}">
-            Back to order
+            {% translate 'Back to order details' %}
         </a>
     </div>
 {% endblock %}

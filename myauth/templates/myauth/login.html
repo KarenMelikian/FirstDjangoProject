@@ -1,12 +1,12 @@
 {% extends 'shop/base.html' %}
-
+{% load i18n %}
 
 {% block title%}
-    Log in
+    {% translate 'Log in' %}
 {% endblock %}
 
 {% block body %}
-    <h1> Log in </h1>
+    <h1> {% translate 'Log in' %} </h1>
     <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
         {{ form.as_p }}
@@ -16,19 +16,19 @@
         <table>
             <tr>
                 <td>
-                    <button type="submit"> Log in </button>
+                    <button type="submit"> {% translate 'Log in' %} </button>
                 </td>
                 <td>
                     |
                 </td>
                 <td>
-                    <a href="{% url 'reset_password' %}"> Forget password? </a>
+                    <a href="{% url 'reset_password' %}"> {% translate 'Forgot password?' %} </a>
                 </td>
                 <td>
                     |
                 </td>
                 <td>
-                    <a href="{% url 'registration' %}"> Create new account </a>
+                    <a href="{% url 'registration' %}"> {% translate 'Create new account' %} </a>
                 </td>
             </tr>
         </table>

@@ -1,16 +1,23 @@
 {% extends 'shop/base.html' %}
-
+{% load i18n %}
 
 {% block title %}
-    Groups
+    {% translate 'Groups' %}
 {% endblock %}
 
 {% block body %}
-    <h1> Group list </h1>
+    <h1> {% translate 'Group list' %} </h1>
+    <div>
+        {% blocktranslate count groups_count=groups|length %}
+            There is only one group
+            {% plural %}
+            There is {{ groups_count }} groups.
+        {% endblocktranslate %}
+    </div>
     <ul>
         {% for group in groups %}
             <p>
-                {{ forloop.counter }}) Group name: <b> <a href="{% url 'group_details' pk=group.pk %}">
+                {{ forloop.counter }}) {% translate 'Group name:' %} <b> <a href="{% url 'group_details' pk=group.pk %}">
                 {{ group.name }} </a> </b>
             </p>
 
@@ -18,12 +25,21 @@
     </ul>
     <div>
         <a href="{% url 'index' %}">
-            Back to main page
+            {% translate 'Back to main page' %}
         </a>
     </div>
-    <div>
-        <a href="{% url 'create_group' %}">
-            Create new group
-        </a>
-    </div>
+    <p></p>
+    {% if groups %}
+        <div>
+            <a href="{% url 'create_group' %}">
+                {% translate 'Create new group' %}
+            </a>
+        </div>
+    {% else %}
+        <div>
+            <a href="{% url 'create_group' %}">
+                {% translate 'Create your first group' %}
+            </a>
+        </div>
+    {% endif %}
 {% endblock %}

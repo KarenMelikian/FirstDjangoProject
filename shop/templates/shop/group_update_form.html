@@ -1,8 +1,8 @@
 {% extends 'shop/base.html' %}
-
+{% load i18n %}
 
 {% block title %}
-    Group update
+    {% translate 'Group update' %}
 {% endblock %}
 
 
@@ -11,12 +11,12 @@
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">
-            Update
+            {% translate 'Update' %}
         </button>
     </form>
     <div>
         <a href="{% url 'group_details' pk=group.pk %}">
-            Back to group details
+            {% translate 'Back to group details' %}
         </a>
     </div>
 {% endblock %}

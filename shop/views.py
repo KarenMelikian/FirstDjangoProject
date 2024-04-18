@@ -3,9 +3,8 @@ from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, reverse, redirect
 from timeit import default_timer
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-
-
 from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _, ngettext
 from django.views.generic import (
                                   ListView,
                                   DetailView,
@@ -18,8 +17,10 @@ from .models import Product, Order
 from .forms import GroupForm
 
 def index(request: HttpRequest) -> HttpResponse:
+    welcome_text = _('Welcome to my shop!')
     context = {
-        'runtime': default_timer()
+        'runtime': default_timer(),
+        'hello': welcome_text
     }
 
     return render(request, 'shop/index.html', context)

@@ -1,22 +1,22 @@
 {% extends 'shop/base.html' %}
-
+{% load i18n %}
 
 {% block title %}
-    Groups
+    {% translate 'Groups' %}
 {% endblock %}
 
 {% block body %}
-    <h1> Create new group </h1>
+    <h1> {% translate 'Create new group' %} </h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">
-            Create
+            {% translate 'Create' %}
         </button>
     </form>
     <div>
         <a href="{% url 'groups' %}">
-            Back to group list
+            {% translate 'Back to group list' %}
         </a>
     </div>
 {% endblock %}

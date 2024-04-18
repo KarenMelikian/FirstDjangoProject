@@ -1,37 +1,40 @@
 {% extends 'shop/base.html' %}
+{% load i18n %}
 
 {% block title %}
-    Order details
+    {% translate 'Order details' %}
 {% endblock %}
 
 
 {% block body %}
-    <h1> Order details </h1>
+    <h1> {% translate 'Order details' %} </h1>
         <ul>
-            <li> Delivery address: {{ order.delivery_address }} </li>
-            <li> Promocode: {{ order.promocode }} </li>
-            <li> Create date: {{ order.created_at }} </li>
-            <li> User: {{ order.user }} </li>
-            <li> Products </li>
+            <li> {% translate 'Delivery address' %}: {{ order.delivery_address }} </li>
+            <li> {% translate 'Promo code' %}: {{ order.promocode }} </li>
+            <li> {% translate 'Creation date' %}: {{ order.created_at }} </li>
+            <li> {% translate 'User' %}: {{ order.user }} </li>
+            <li> {% translate 'Products' %} </li>
             <ul>
                 {% for product in order.products.all %}
-                    <li> {{ product }} </li>
-                {% endfor %}
+                <li> {{ product }} </li>
+            {% endfor %}
             </ul>
         </ul>
     <div>
         <a href="{% url 'orders' %}">
-            Back to order list
+            {% translate 'Back to order list' %}
         </a>
     </div>
+    <p></p>
     <div>
         <a href="{% url 'update_order' pk=order.pk %}">
-            Order update
+            {% translate 'Order update' %}
         </a>
     </div>
+    <p></p>
     <div>
         <a href="{% url 'delete_order' pk=order.pk %}">
-            Delete order
+            {% translate 'Delete order' %}
         </a>
     </div>
 {% endblock %}

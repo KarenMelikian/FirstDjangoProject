@@ -1,24 +1,24 @@
 {% extends 'shop/base.html' %}
-
+{% load i18n %}
 
 {% block title %}
-    Delete order
+    {% translate 'Delete order' %}
 {% endblock %}
 
 
 {% block body %}
-    <h1> Order Delete </h1>
-    <h2> Are you sure you want to delete {{ object.delivery_address }}? </h2>
+    <h1> {% translate 'Deleting an order' %} </h1>
+    <h2> {% translate 'Are you sure you want to delete' %} {{ object.delivery_address }}? </h2>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">
-            Delete
+            {% translate 'Delete' %}
         </button>
     </form>
     <div>
         <a href="{% url 'order_details' pk=object.pk %}">
-            Back to order
+            {% translate 'Back to order details' %}
         </a>
     </div>
 {% endblock %}

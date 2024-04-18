@@ -1,43 +1,46 @@
 {% extends 'shop/base.html' %}
-
+{% load i18n %}
 
 {% block title %}
-    Product {{ product.pk }}
+    {% translate 'Product' %} {{ product.pk }}
 {% endblock %}
 
 
 {% block body %}
-    <h1> Product details </h1>
-    <li> Product: {{ product.name }} </li>
+    <h1> {% translate 'Product details' %} </h1>
+    <li> {% translate 'Product' %}: {{ product.name }} </li>
     <ul>
-        <li> Description: {{ product.description }} </li>
-        <li> Price: ${{ product.price }} </li>
-        <li> Discount: {{ product.discount }}% </li>
-        <li> create date: {{ product.created_at }} </li>
+        <li> {% translate 'Description' %}: {{ product.description }} </li>
+        <li> {% translate 'Price' %}: ${{ product.price }} </li>
+        <li> {% translate 'Discount' %}: {{ product.discount }}% </li>
+        <li> {% translate 'Creation date' %}: {{ product.created_at }} </li>
         {% if product.is_archived %}
-            <li> Product is archived </li>
+            <li> {% translate 'Product is archived' %} </li>
         {% else %}
-            <li> Product is not archived </li>
+            <li> {% translate 'Product is not archived' %} </li>
         {% endif %}
     </ul>
     <div>
         <a href="{% url 'products' %}">
-            Back to product list
+            {% translate 'Back to product list' %}
         </a>
     </div>
+    <p></p>
     <div>
         <a href="{% url 'update_product' pk=product.pk %}">
-            Product update
+            {% translate 'Product update' %}
         </a>
     </div>
+    <p></p>
     <div>
         <a href="{% url 'delete_product' pk=product.pk %}">
-            Product delete
+            {% translate 'Product delete' %}
         </a>
     </div>
+    <p></p>
     <div>
         <a href="{% url 'archive_product' pk=product.pk %}">
-            Product archive
+            {% translate 'Product archive' %}
         </a>
     </div>
 {% endblock %}

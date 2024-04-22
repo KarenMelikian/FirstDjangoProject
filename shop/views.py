@@ -5,16 +5,14 @@ from timeit import default_timer
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _, ngettext
-from django.views.generic import (
-                                  ListView,
-                                  DetailView,
-                                  DeleteView,
-                                  UpdateView,
-                                  CreateView,
-                                  )
+from django.views.generic import (ListView, DetailView, DeleteView, UpdateView, CreateView)
+from rest_framework.filters import SearchFilter, OrderingFilter
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.viewsets import ModelViewSet
 
 from .models import Product, Order
 from .forms import GroupForm
+from .serializers import ProductSerializer, OrderSerializer
 
 def index(request: HttpRequest) -> HttpResponse:
     welcome_text = _('Welcome to my shop!')
@@ -25,6 +23,68 @@ def index(request: HttpRequest) -> HttpResponse:
 
     return render(request, 'shop/index.html', context)
 
+
+class ProductSetView(ModelViewSet):
+    """
+    A view set for interacting with the product resource.
+
+    This view set provides CRUD (Create, Retrieve, Update, Delete) operations
+    for the product resource. It supports listing all products, creating a new product,
+    retrieving a specific product by ID, updating an existing product, and deleting a product.
+
+    Attributes:
+        queryset (QuerySet): The queryset representing all products in the database.
+        serializer_class (Serializer): The serializer class used to serialize/deserialize
+            product instances.
+    """
+
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+
+    filter_backends = [
+        SearchFilter,
+        DjangoFilterBackend,
+        OrderingFilter,
+    ]
+
+    search_fields = ["name", "description", ]
+    filterset_fields = [
+        "name",
+        "description",
+        "price",
+        "discount",
+        "is_archived"
+    ]
+    ordering_fields = [
+        "name",
+        "price",
+        "discount",
+    ]
+
+
+class OrderSetView(ModelViewSet):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
+
+    filter_backends = [
+        DjangoFilterBackend,
+        SearchFilter,
+        OrderingFilter
+    ]
+    search_fields = [
+        "delivery_address", 'user'
+    ]
+
+    filterset_fields = [
+        'delivery_address',
+        'promocode',
+        'user'
+    ]
+
+    ordering_fields = [
+        'created_at',
+        'user'
+    ]
 
 class ProductListView(LoginRequiredMixin, ListView):
     template_name = 'shop/product-list.html'

@@ -21,17 +21,22 @@ from django.urls import path, include
 
 from mysite import settings
 
+from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
+
 urlpatterns = [
+    path('admin/doc/', include('django.contrib.admindocs.urls')),
     path('admin/', admin.site.urls),
     path('req/', include('requestdataapp.urls')),
+    path('api/', include('apiapp.urls')),
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    path('api/schema/swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger'),
+    path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 ]
 
 urlpatterns += i18n_patterns(
     path('', include('shop.urls')),
     path('accounts/', include('myauth.urls')),
-
 )
-
 
 if settings.DEBUG:
     urlpatterns.extend(

@@ -1,4 +1,5 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 
 from .views import (index,
                     ProductListView,
@@ -16,10 +17,19 @@ from .views import (index,
                     ProductDeleteView,
                     ProductArchiveView,
                     OrderDeleteView,
-                    GroupDeleteView)
+                    GroupDeleteView,
+                    ProductSetView,
+                    OrderSetView)
+
+routers = DefaultRouter()
+
+routers.register('products', ProductSetView)
+routers.register('orders', OrderSetView)
+
 
 urlpatterns = [
     path('', index, name='index'),
+    path('api', include(routers.urls)),
     path('products/', ProductListView.as_view(), name='products'),
     path('orders/', OrderListView.as_view(), name='orders'),
     path('groups/', GroupListView.as_view(), name='groups'),

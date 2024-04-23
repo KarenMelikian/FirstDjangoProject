@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-18 19:07+0000\n"
+"POT-Creation-Date: 2024-04-23 13:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,48 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: blogapp/templates/blogapp/blog-list.html:5
+#: blogapp/templates/blogapp/blog-list.html:10
+#: shop/templates/shop/index.html:20
+msgid "Blog"
+msgstr "Բլոգ"
+
+#: blogapp/templates/blogapp/blog-list.html:13
+msgid "Title"
+msgstr "Վերնագիր"
+
+#: blogapp/templates/blogapp/blog-list.html:15
+msgid "Content"
+msgstr "Բովանդակություն"
+
+#: blogapp/templates/blogapp/blog-list.html:16
+msgid "Publication date"
+msgstr "Հրապարակման ժամանակը"
+
+#: blogapp/templates/blogapp/blog-list.html:17
+msgid "Author"
+msgstr "Հեղինակ"
+
+#: blogapp/templates/blogapp/blog-list.html:18
+msgid "Category"
+msgstr "Կատեգորիա"
+
+#: blogapp/templates/blogapp/blog-list.html:19
+msgid "Tags"
+msgstr "Պիտակներ"
+
+#: blogapp/templates/blogapp/blog-list.html:31
+#: myauth/templates/myauth/change_password.html:18
+#: myauth/templates/myauth/change_password_done.html:11
+#: myauth/templates/myauth/profile.html:21
+#: myauth/templates/myauth/registration.html:18
+#: myauth/templates/myauth/reset_password.html:18
+#: myauth/templates/myauth/reset_password_complete.html:11
+#: myauth/templates/myauth/reset_password_confirm.html:18
+#: myauth/templates/myauth/reset_password_done.html:12
+msgid "Main page"
+msgstr "Գլխավոր էջ"
 
 #: myauth/forms.py:9
 msgid "First Name"
@@ -54,17 +96,6 @@ msgstr "Փոխել գաղտնաբառը"
 msgid "Change"
 msgstr "Փոխել"
 
-#: myauth/templates/myauth/change_password.html:18
-#: myauth/templates/myauth/change_password_done.html:11
-#: myauth/templates/myauth/profile.html:21
-#: myauth/templates/myauth/registration.html:18
-#: myauth/templates/myauth/reset_password.html:18
-#: myauth/templates/myauth/reset_password_complete.html:11
-#: myauth/templates/myauth/reset_password_confirm.html:18
-#: myauth/templates/myauth/reset_password_done.html:12
-msgid "Main page"
-msgstr "Գլխավոր էջ"
-
 #: myauth/templates/myauth/change_password.html:21
 msgid "Back to profile page"
 msgstr "Վերադառնալ անձնական էջ"
@@ -81,7 +112,7 @@ msgstr "Ձեր գաղտնաբառը հաջողությամբ փոխվել է"
 #: myauth/templates/myauth/reset_password_complete.html:5
 #: myauth/templates/myauth/reset_password_confirm.html:5
 #: myauth/templates/myauth/reset_password_done.html:5
-#: shop/templates/shop/index.html:46
+#: shop/templates/shop/index.html:50
 msgid "Profile"
 msgstr "Անձնական տարածք"
 
@@ -89,7 +120,7 @@ msgstr "Անձնական տարածք"
 #: myauth/templates/myauth/login.html:19
 #: myauth/templates/myauth/reset_password_complete.html:14
 #: myauth/templates/myauth/reset_password_confirm.html:21
-#: shop/templates/shop/index.html:53
+#: shop/templates/shop/index.html:57
 msgid "Log in"
 msgstr "Մուտք գործել"
 
@@ -137,18 +168,18 @@ msgid ""
 "We\"ve emailed you instructions for setting your password. You should "
 "receive the email shortly"
 msgstr ""
-"Մենք ձեզ էլփոստով ուղարկել ենք ձեր գաղտնաբառը սահմանելու հրահանգները: "
-"Դուք պետք է շուտով ստանաք"
+"Մենք ձեզ էլփոստով ուղարկել ենք ձեր գաղտնաբառը սահմանելու հրահանգները: Դուք "
+"պետք է շուտով ստանաք"
 
-#: mysite/settings.py:130
+#: mysite/settings.py:137
 msgid "Armenian"
 msgstr ""
 
-#: mysite/settings.py:131
+#: mysite/settings.py:138
 msgid "Russia"
 msgstr ""
 
-#: mysite/settings.py:132
+#: mysite/settings.py:139
 msgid "English"
 msgstr ""
 
@@ -309,19 +340,19 @@ msgstr "Թարմացնել"
 msgid "Runtime"
 msgstr "Գործարկման ժամանակը"
 
-#: shop/templates/shop/index.html:21
+#: shop/templates/shop/index.html:25
 msgid "Go to view the list of products"
 msgstr "Դիտել ապրանքների ցանկը"
 
-#: shop/templates/shop/index.html:27
+#: shop/templates/shop/index.html:31
 msgid "Go to view the list of orders"
 msgstr "Դիտել պատվերների ցանկը"
 
-#: shop/templates/shop/index.html:33
+#: shop/templates/shop/index.html:37
 msgid "Go to view the list of groups"
 msgstr "Դիտել Խմբերի ցանկը"
 
-#: shop/templates/shop/index.html:40
+#: shop/templates/shop/index.html:44
 msgid "Log out"
 msgstr "Դուրս գալ"
 
@@ -522,7 +553,7 @@ msgstr "Ապրանքի ջնջում"
 msgid "Update product"
 msgstr "Թարմացնել ապրանքը"
 
-#: shop/views.py:20
+#: shop/views.py:18
 msgid "Welcome to my shop!"
 msgstr "Բարի գալուստ իմ խանութ!"
 

@@ -1,21 +1,22 @@
 {% extends 'shop/base.html' %}
+{% load i18n %}
 
 {% block title %}
-    Blog
+    {% translate 'Blog' %}
 {% endblock %}
 
 
 {% block body %}
-    <h1> Blog </h1>
+    <h1> {% translate 'Blog' %} </h1>
     <ul>
         {% for article in articles %}
-            <li> {{ forloop.counter }}) Title: {{ article.title }} </li>
+            <li> {{ forloop.counter }}) {% translate 'Title' %}: {{ article.title }} </li>
             <ul>
-                <li> Content: {{ article.content }} </li>
-                <li> Publication date: {{ article.pub_date }} </li>
-                <li> Author: {{ article.author }} </li>
-                <li> Category: {{ article.category }} </li>
-                <li> Tags:
+                <li> {% translate 'Content' %}: {{ article.content }} </li>
+                <li> {% translate 'Publication date' %}: {{ article.pub_date }} </li>
+                <li> {% translate 'Author' %}: {{ article.author }} </li>
+                <li> {% translate 'Category' %}: {{ article.category }} </li>
+                <li> {% translate 'Tags' %}:
                     <ul>
                         {% for tag in article.tags.all %}
                             <li> {{ tag.name }} </li>
@@ -27,6 +28,6 @@
         {% endfor %}
     </ul>
     <div>
-        <a href="{% url 'index' %}"> Main page </a>
+        <a href="{url 'index'}"> {% translate 'Main page' %} </a>
     </div>
 {% endblock %}

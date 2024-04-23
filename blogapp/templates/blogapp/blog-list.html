@@ -1,0 +1,32 @@
+{% extends 'shop/base.html' %}
+
+{% block title %}
+    Blog
+{% endblock %}
+
+
+{% block body %}
+    <h1> Blog </h1>
+    <ul>
+        {% for article in articles %}
+            <li> {{ forloop.counter }}) Title: {{ article.title }} </li>
+            <ul>
+                <li> Content: {{ article.content }} </li>
+                <li> Publication date: {{ article.pub_date }} </li>
+                <li> Author: {{ article.author }} </li>
+                <li> Category: {{ article.category }} </li>
+                <li> Tags:
+                    <ul>
+                        {% for tag in article.tags.all %}
+                            <li> {{ tag.name }} </li>
+                        {% endfor %}
+                    </ul>
+                <p></p>
+                </li>
+            </ul>
+        {% endfor %}
+    </ul>
+    <div>
+        <a href="{% url 'index' %}"> Main page </a>
+    </div>
+{% endblock %}

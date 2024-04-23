@@ -17,6 +17,10 @@
     <p></p>
     {% if user.is_authenticated %}
         <div>
+            <a href="{% url 'blog' %}"> Blog </a>
+        </div>
+        <p></p>
+        <div>
             <a href="{% url 'products' %}">
                 {% translate 'Go to view the list of products' %}
             </a>
@@ -52,6 +56,9 @@
             <a href="{% url 'login' %}">
                 {% translate 'Log in' %}
             </a>
+        </div>
+        <div>
+            <a href="{% url 'blog' %}"> Blog </a>
         </div>
     {% endif %}
 {% endblock %}

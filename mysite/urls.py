@@ -36,6 +36,7 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path('', include('shop.urls')),
     path('accounts/', include('myauth.urls')),
+    path('blog/', include('blogapp.urls')),
 )
 
 if settings.DEBUG:

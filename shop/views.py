@@ -15,6 +15,17 @@ from .forms import GroupForm
 from .serializers import ProductSerializer, OrderSerializer
 
 def index(request: HttpRequest) -> HttpResponse:
+    """
+    View function for the index page of the shop.
+
+    Displays a welcome message and renders the index.html template.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: The HTTP response object containing the rendered template.
+    """
     welcome_text = _('Welcome to my shop!')
     context = {
         'runtime': default_timer(),
@@ -63,6 +74,18 @@ class ProductSetView(ModelViewSet):
 
 
 class OrderSetView(ModelViewSet):
+    """
+    A view set for interacting with the order resource.
+
+    This view set provides CRUD (Create, Retrieve, Update, Delete) operations
+    for the order resource. It supports listing all orders, creating a new order,
+    retrieving a specific order by ID, updating an existing order, and deleting an order.
+
+    Attributes:
+        queryset (QuerySet): The queryset representing all orders in the database.
+        serializer_class (Serializer): The serializer class used to serialize/deserialize
+            order instances.
+    """
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
 
@@ -87,16 +110,44 @@ class OrderSetView(ModelViewSet):
     ]
 
 class ProductListView(LoginRequiredMixin, ListView):
+    """
+    View for listing all products.
+
+    This view displays a list of all products available in the store.
+
+    Attributes:
+        template_name (str): The name of the template used to render the view.
+        model (Model): The model associated with this view (Product).
+        context_object_name (str): The variable name used in the template to access the list of products.
+    """
     template_name = 'shop/product-list.html'
     model = Product
     context_object_name = 'products'
 
 class OrderListView(LoginRequiredMixin, ListView):
+    """
+    View for listing all orders.
+
+    This view displays a list of all orders placed in the store.
+
+    Attributes:
+        template_name (str): The name of the template used to render the view.
+        model (Model): The model associated with this view (Order).
+        context_object_name (str): The variable name used in the template to access the list of orders.
+    """
     template_name = 'shop/order-list.html'
     model = Order
     context_object_name = 'orders'
 
 class GroupListView(LoginRequiredMixin, ListView):
+    """
+    View for listing all user groups.
+
+    This view displays a list of all user groups in the system.
+
+    Attributes:
+        template_name (str): The name of the template used to render the view.
+    """
     def get(self, request: HttpRequest) -> HttpResponse:
         context = {
             'form': GroupForm,
@@ -113,12 +164,32 @@ class GroupListView(LoginRequiredMixin, ListView):
 
 
 class ProductDetailsView(LoginRequiredMixin, DetailView):
+    """
+    View for displaying details of a product.
+
+    This view displays detailed information about a specific product.
+
+    Attributes:
+        template_name (str): The name of the template used to render the view.
+        model (Model): The model associated with this view (Product).
+        context_object_name (str): The variable name used in the template to access the product object.
+    """
     template_name = 'shop/product-details.html'
     model = Product
     context_object_name = 'product'
 
 
 class OrderDetailsView(LoginRequiredMixin, DetailView):
+    """
+    View for displaying details of an order.
+
+    This view displays detailed information about a specific order.
+
+    Attributes:
+        template_name (str): The name of the template used to render the view.
+        model (Model): The model associated with this view (Order).
+        context_object_name (str): The variable name used in the template to access the order object.
+    """
     template_name = 'shop/order-details.html'
     model = Order
     context_object_name = 'order'
@@ -126,12 +197,33 @@ class OrderDetailsView(LoginRequiredMixin, DetailView):
 
 
 class GroupDetailsView(LoginRequiredMixin, DetailView):
+    """
+    View for displaying details of a user group.
+
+    This view displays detailed information about a specific user group.
+
+    Attributes:
+        template_name (str): The name of the template used to render the view.
+        model (Model): The model associated with this view (Group).
+        context_object_name (str): The variable name used in the template to access the group object.
+    """
     template_name = 'shop/group-details.html'
     model = Group
     context_object_name = 'group'
 
 
 class ProductCreateView(UserPassesTestMixin, LoginRequiredMixin, CreateView):
+    """
+    View for creating a new product.
+
+    This view allows superusers to create new products.
+
+    Attributes:
+        template_name (str): The name of the template used to render the view.
+        model (Model): The model associated with this view (Product).
+        fields (tuple): The fields of the model to be included in the form.
+        success_url (str): The URL to redirect to after successfully creating the product.
+    """
     def test_func(self):
         return self.request.user.is_superuser
 
@@ -143,6 +235,17 @@ class ProductCreateView(UserPassesTestMixin, LoginRequiredMixin, CreateView):
 
 
 class OrderCreateView(LoginRequiredMixin, CreateView):
+    """
+    View for creating a new order.
+
+    This view allows authenticated users to create new orders.
+
+    Attributes:
+        template_name (str): The name of the template used to render the view.
+        model (Model): The model associated with this view (Order).
+        fields (tuple): The fields of the model to be included in the form.
+        success_url (str): The URL to redirect to after successfully creating the order.
+    """
     template_name = 'shop/create-order.html'
     model = Order
     fields = 'delivery_address', 'promocode', 'user', 'products'
@@ -151,6 +254,17 @@ class OrderCreateView(LoginRequiredMixin, CreateView):
 
 
 class GroupCreateView(UserPassesTestMixin, LoginRequiredMixin, CreateView):
+    """
+    View for creating a new user group.
+
+    This view allows superusers to create new user groups.
+
+    Attributes:
+        template_name (str): The name of the template used to render the view.
+        model (Model): The model associated with this view (Group).
+        fields (tuple): The fields of the model to be included in the form.
+        success_url (str): The URL to redirect to after successfully creating the user group.
+    """
     def test_func(self):
         return self.request.user.is_superuser
 
@@ -161,6 +275,16 @@ class GroupCreateView(UserPassesTestMixin, LoginRequiredMixin, CreateView):
 
 
 class ProductUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
+    """
+    View for updating an existing product.
+
+    This view allows superusers to update existing products.
+
+    Attributes:
+        model (Model): The model associated with this view (Product).
+        fields (tuple): The fields of the model to be included in the form.
+        template_name_suffix (str): The suffix to append to the template name.
+    """
     def test_func(self):
         return self.request.user.is_superuser
 
@@ -168,14 +292,18 @@ class ProductUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
     fields = 'name', 'description', 'price', 'discount'
     template_name_suffix = '_update_form'
 
-    def get_success_url(self):
-        return reverse(
-            'product_details',
-            kwargs={'pk': self.object.pk}
-        )
-
 
 class OrderUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
+    """
+    View for updating an existing order.
+
+    This view allows superusers to update existing orders.
+
+    Attributes:
+        model (Model): The model associated with this view (Order).
+        fields (tuple): The fields of the model to be included in the form.
+        template_name_suffix (str): The suffix to append to the template name.
+    """
     def test_func(self):
         return self.request.user.is_superuser
 
@@ -183,15 +311,18 @@ class OrderUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
     fields = 'delivery_address', 'promocode', 'products'
     template_name_suffix = '_update_form'
 
-    def get_success_url(self):
-        return reverse(
-            'order_details',
-            kwargs={'pk': self.object.pk}
-        )
-
-
 
 class GroupUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
+    """
+    View for updating an existing user group.
+
+    This view allows superusers to update existing user groups.
+
+    Attributes:
+        model (Model): The model associated with this view (Group).
+        fields (tuple): The fields of the model to be included in the form.
+        template_name (str): The name of the template used to render the view.
+    """
     def test_func(self):
         return self.request.user.is_superuser
 
@@ -200,15 +331,19 @@ class GroupUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
     fields = 'name', 'permissions'
     template_name = 'shop/group_update_form.html'
 
-    def get_success_url(self):
-        return reverse(
-            'group_details',
-            kwargs={'pk': self.object.pk}
-        )
-
 
 
 class ProductDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
+    """
+    View for deleting a product.
+
+    This view allows superusers to delete products.
+
+    Attributes:
+        model (Model): The model associated with this view (Product).
+        success_url (str): The URL to redirect to after successfully deleting the product.
+        template_name (str): The name of the template used to render the delete confirmation page.
+    """
     def test_func(self):
         return self.request.user.is_superuser
 
@@ -218,6 +353,16 @@ class ProductDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
     template_name = 'shop/product_confirm_delete.html'
 
 class ProductArchiveView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
+    """
+    View for archiving a product.
+
+    This view allows superusers to archive products.
+
+    Attributes:
+        model (Model): The model associated with this view (Product).
+        success_url (str): The URL to redirect to after successfully archiving the product.
+        template_name (str): The name of the template used to render the archive confirmation page.
+    """
     def test_func(self):
         return self.request.user.is_superuser
 
@@ -234,12 +379,31 @@ class ProductArchiveView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
 
 
 class OrderDeleteView(LoginRequiredMixin, DeleteView):
+    """
+    View for deleting an order.
+
+    This view allows authenticated users to delete their own orders.
+
+    Attributes:
+        model (Model): The model associated with this view (Order).
+        success_url (str): The URL to redirect to after successfully deleting the order.
+    """
     model = Order
     success_url = reverse_lazy('orders')
 
 
 
 class GroupDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
+    """
+    View for deleting a user group.
+
+    This view allows superusers to delete user groups.
+
+    Attributes:
+        model (Model): The model associated with this view (Group).
+        success_url (str): The URL to redirect to after successfully deleting the user group.
+        template_name (str): The name of the template used to render the delete confirmation page.
+    """
     def test_func(self):
         return self.request.user.is_superuser
 

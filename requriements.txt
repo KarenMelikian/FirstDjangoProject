@@ -11,6 +11,7 @@ jsonschema==4.21.1
 jsonschema-specifications==2023.12.1
 pillow==10.3.0
 psycopg==3.1.18
+python-decouple==3.8
 PyYAML==6.0.1
 referencing==0.34.0
 rpds-py==0.18.0

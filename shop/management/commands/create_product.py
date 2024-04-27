@@ -5,12 +5,26 @@ from shop.models import Product
 
 class Command(BaseCommand):
     '''
-    Create products
+    Command to create products.
+
+    This command creates sample products for demonstration purposes.
+
+    Usage:
+    python manage.py create_products
     '''
 
-
     def handle(self, *args, **options):
-        self.stdout.write('Create products')
+        """
+        Handles the execution of the command.
+
+        Args:
+            *args: Variable length argument list.
+            **options: Keyword arguments.
+
+        Returns:
+            None
+        """
+        self.stdout.write('Creating products...')
 
         names = [
             'Laptop',
@@ -25,10 +39,11 @@ class Command(BaseCommand):
         ]
 
         for name, price in zip(names, prices):
-            name_, created = Product.objects.get_or_create(
-                name = name,
-                price = price
+            product, created = Product.objects.get_or_create(
+                name=name,
+                price=price
             )
-            self.stdout.write(f'Create product {name} for ${price}')
+            self.stdout.write(f'Created product {name} for ${price}')
 
-        self.stdout.write(self.style.SUCCESS('Products successfully created. '))
+        self.stdout.write(self.style.SUCCESS('Products successfully created.'))
+

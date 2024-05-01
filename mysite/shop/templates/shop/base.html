@@ -1,20 +1,16 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>
-        {% block title %}
-        {% endblock %}
-    </title>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'deps/css/styles.css' %}">
 </head>
 <body>
-    {% block body %}
-    {% endblock %}
+    <div class="container">
+        {% block body %}{% endblock %}
+    </div>
+
 </body>
-    <div>
-        {% now 'H:i' %}
-    </div>
-    <div>
-        {% now l %}
-    </div>
 </html>

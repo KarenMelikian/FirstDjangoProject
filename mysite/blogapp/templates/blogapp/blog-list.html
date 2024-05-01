@@ -5,29 +5,33 @@
     {% translate 'Blog' %}
 {% endblock %}
 
-
 {% block body %}
-    <h1> {% translate 'Blog' %} </h1>
-    <ul>
-        {% for article in articles %}
-            <li> {{ forloop.counter }}) {% translate 'Title' %}: {{ article.title }} </li>
-            <ul>
-                <li> {% translate 'Content' %}: {{ article.content }} </li>
-                <li> {% translate 'Publication date' %}: {{ article.pub_date }} </li>
-                <li> {% translate 'Author' %}: {{ article.author }} </li>
-                <li> {% translate 'Category' %}: {{ article.category }} </li>
-                <li> {% translate 'Tags' %}:
-                    <ul>
-                        {% for tag in article.tags.all %}
-                            <li> {{ tag.name }} </li>
-                        {% endfor %}
-                    </ul>
-                <p></p>
-                </li>
+    <body class="blog-page"> <!-- Добавлен класс "blog-page" -->
+        <div class="blog-container">
+            <h1 class="blog-title">{% translate 'Blog' %}</h1>
+            <ul class="article-list">
+                {% for article in articles %}
+                    <li class="article">
+                        <h2 class="article-title">{{ article.title }}</h2>
+                        <div class="article-info">
+                            <p class="article-date">{% translate 'Publication date' %}: {{ article.pub_date }}</p>
+                            <p class="article-author">{% translate 'Author' %}: {{ article.author }}</p>
+                            <p class="article-category">{% translate 'Category' %}: {{ article.category }}</p>
+                            <p class="article-tags">{% translate 'Tags' %}:
+                                <ul class="tag-list">
+                                    {% for tag in article.tags.all %}
+                                        <li class="tag">{{ tag.name }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </p>
+                        </div>
+                        <p class="article-content">{{ article.content }}</p>
+                    </li>
+                {% endfor %}
             </ul>
-        {% endfor %}
-    </ul>
-    <div>
-        <a href="{url 'index'}"> {% translate 'Main page' %} </a>
-    </div>
+        </div>
+        <div class="back-to-home">
+            <a href="{% url 'index' %}" class="home-link">{% translate 'Main page' %}</a>
+        </div>
+    </body>
 {% endblock %}

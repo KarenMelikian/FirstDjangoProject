@@ -1,0 +1,110 @@
+body {
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/background.png');
+    background-size: cover;
+    background-position: center;
+    color: #333;
+}
+
+
+.container {
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 100px;
+    background-color: rgb(203 213 225);
+    border-radius: 10px;
+    box-shadow: 0 10px 80px rgba(10, 50, 80, 0.5);
+}
+
+h1 {
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    color: black;
+    text-align: center;
+}
+ul {
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    padding: 0;
+    margin: 0;
+}
+li {
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    margin-bottom: 15px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    list-style: none;
+}
+a {
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    color: purple;
+    text-decoration: none;
+}
+a:hover {
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    text-decoration: underline;
+}
+
+
+.article {
+    margin-bottom: 30px;
+    padding: 30px;
+    background-color: rgb(226 232 240);
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(10, 10, 0, 0.5);
+}
+
+.article-title {
+    color: #555;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.article-info {
+    margin-bottom: 10px;
+}
+
+.article-date {
+    color: #999;
+}
+
+.article-content {
+    color: #777;
+    line-height: 1.6;
+}
+
+.tag-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tag {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.back-to-home {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.home-link {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.home-link:hover {
+    text-decoration: underline;
+}
+
+
+.blog-page {
+    background: url('../images/blog-background.png') no-repeat center center fixed;
+    background-size: cover;
+}

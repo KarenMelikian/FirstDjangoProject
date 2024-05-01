@@ -1,3 +1,20 @@
+"""
+The views module contains view functions for handling HTTP requests and rendering web pages.
+
+This module includes view functions for various aspects of the web application, such as
+displaying product listings.
+
+Functions:
+    index: Renders the index page of the shop application.
+    product_detail: Renders the detail page for a specific product.
+    process_order: Handles order processing.
+    api_product_list: Returns a JSON response containing a list of products (API endpoint).
+    api_product_detail: Returns a JSON response containing details of a specific product (API endpoint)
+"""
+
+
+
+import logging
 from django.contrib.auth.models import Group
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, reverse, redirect
@@ -13,6 +30,9 @@ from rest_framework.viewsets import ModelViewSet
 from .models import Product, Order
 from .forms import GroupForm
 from .serializers import ProductSerializer, OrderSerializer
+
+
+logger = logging.getLogger(__name__)
 
 def index(request: HttpRequest) -> HttpResponse:
     """
@@ -31,6 +51,8 @@ def index(request: HttpRequest) -> HttpResponse:
         'runtime': default_timer(),
         'hello': welcome_text
     }
+
+    logger.info("Rendering shop index")
 
     return render(request, 'shop/index.html', context)
 

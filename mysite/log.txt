@@ -1501,3 +1501,510 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 6: 'st
 2024-05-01 15:58:32,042 [INFO] in shop.views: Rendering shop index
 2024-05-01 15:58:32,165 [INFO] in shop.views: Rendering shop index
 2024-05-01 15:58:33,913 [WARNING] in django.request: Not Found: /favicon.ico
+2024-05-17 14:34:13,954 [DEBUG] in psycopg.pq: couldn't import psycopg 'c' implementation: No module named 'psycopg_c'
+2024-05-17 14:34:13,955 [DEBUG] in psycopg.pq: couldn't import psycopg 'binary' implementation: No module named 'psycopg_binary'
+2024-05-17 14:34:14,284 [DEBUG] in psycopg.pq: couldn't import psycopg 'c' implementation: No module named 'psycopg_c'
+2024-05-17 14:34:14,284 [DEBUG] in psycopg.pq: couldn't import psycopg 'binary' implementation: No module named 'psycopg_binary'
+2024-05-17 14:34:14,378 [INFO] in django.utils.autoreload: Watching for file changes with StatReloader
+2024-05-17 14:34:25,844 [INFO] in django.utils.autoreload: /home/karen/Desktop/FirstDjangoProject/FirstDjangoProject/mysite/mysite/settings.py changed, reloading.
+2024-05-17 14:34:26,163 [DEBUG] in psycopg.pq: couldn't import psycopg 'c' implementation: No module named 'psycopg_c'
+2024-05-17 14:34:26,163 [DEBUG] in psycopg.pq: couldn't import psycopg 'binary' implementation: No module named 'psycopg_binary'
+2024-05-17 14:34:26,202 [INFO] in django.utils.autoreload: Watching for file changes with StatReloader
+2024-05-17 14:34:40,833 [ERROR] in django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 69, in __call__
+    panel.generate_stats(request, response)
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/debug_toolbar/panels/request.py", line 64, in generate_stats
+    (k, request.session.get(k)) for k in sorted(request.session.keys())
+                                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/base.py", line 123, in keys
+    return self._session.keys()
+           ^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1549, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 736, in as_sql
+    extra_select, order_by, group_by = self.pre_sql_setup(
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 84, in pre_sql_setup
+    self.setup_query(with_col_aliases=with_col_aliases)
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 73, in setup_query
+    self.select, self.klass_info, self.annotation_col_map = self.get_select(
+                                                            ^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 296, in get_select
+    sql, params = self.compile(col)
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 546, in compile
+    sql, params = node.as_sql(self, self.connection)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/expressions.py", line 1180, in as_sql
+    sql = ".".join(map(compiler.quote_name_unless_alias, identifiers))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 537, in quote_name_unless_alias
+    r = self.connection.ops.quote_name(name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/dummy/base.py", line 20, in complain
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: settings.DATABASES is improperly configured. Please supply the ENGINE value. Check settings documentation for more details.
+2024-05-17 14:38:27,207 [INFO] in django.utils.autoreload: /home/karen/Desktop/FirstDjangoProject/FirstDjangoProject/mysite/mysite/settings.py changed, reloading.
+2024-05-17 14:38:27,760 [DEBUG] in psycopg.pq: couldn't import psycopg 'c' implementation: No module named 'psycopg_c'
+2024-05-17 14:38:27,761 [DEBUG] in psycopg.pq: couldn't import psycopg 'binary' implementation: No module named 'psycopg_binary'
+2024-05-17 14:38:27,844 [INFO] in django.utils.autoreload: Watching for file changes with StatReloader
+2024-05-17 14:38:34,899 [ERROR] in django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 69, in __call__
+    panel.generate_stats(request, response)
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/debug_toolbar/panels/request.py", line 64, in generate_stats
+    (k, request.session.get(k)) for k in sorted(request.session.keys())
+                                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/base.py", line 123, in keys
+    return self._session.keys()
+           ^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: django_session
+2024-05-17 14:38:35,504 [ERROR] in django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 69, in __call__
+    panel.generate_stats(request, response)
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/debug_toolbar/panels/request.py", line 64, in generate_stats
+    (k, request.session.get(k)) for k in sorted(request.session.keys())
+                                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/base.py", line 123, in keys
+    return self._session.keys()
+           ^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: django_session
+2024-05-17 14:38:35,772 [ERROR] in django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 69, in __call__
+    panel.generate_stats(request, response)
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/debug_toolbar/panels/request.py", line 64, in generate_stats
+    (k, request.session.get(k)) for k in sorted(request.session.keys())
+                                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/base.py", line 123, in keys
+    return self._session.keys()
+           ^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: django_session
+2024-05-17 14:38:35,948 [ERROR] in django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 69, in __call__
+    panel.generate_stats(request, response)
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/debug_toolbar/panels/request.py", line 64, in generate_stats
+    (k, request.session.get(k)) for k in sorted(request.session.keys())
+                                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/base.py", line 123, in keys
+    return self._session.keys()
+           ^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: django_session
+2024-05-17 14:38:50,420 [DEBUG] in psycopg.pq: couldn't import psycopg 'c' implementation: No module named 'psycopg_c'
+2024-05-17 14:38:50,421 [DEBUG] in psycopg.pq: couldn't import psycopg 'binary' implementation: No module named 'psycopg_binary'
+2024-05-17 14:39:05,845 [DEBUG] in psycopg.pq: couldn't import psycopg 'c' implementation: No module named 'psycopg_c'
+2024-05-17 14:39:05,846 [DEBUG] in psycopg.pq: couldn't import psycopg 'binary' implementation: No module named 'psycopg_binary'
+2024-05-17 14:39:08,536 [DEBUG] in psycopg.pq: couldn't import psycopg 'c' implementation: No module named 'psycopg_c'
+2024-05-17 14:39:08,536 [DEBUG] in psycopg.pq: couldn't import psycopg 'binary' implementation: No module named 'psycopg_binary'
+2024-05-17 14:39:08,764 [DEBUG] in psycopg.pq: couldn't import psycopg 'c' implementation: No module named 'psycopg_c'
+2024-05-17 14:39:08,765 [DEBUG] in psycopg.pq: couldn't import psycopg 'binary' implementation: No module named 'psycopg_binary'
+2024-05-17 14:39:08,802 [INFO] in django.utils.autoreload: Watching for file changes with StatReloader
+2024-05-17 14:39:09,994 [INFO] in shop.views: Rendering shop index
+2024-05-17 14:39:11,008 [INFO] in shop.views: Rendering shop index
+2024-05-17 14:39:52,805 [DEBUG] in psycopg.pq: couldn't import psycopg 'c' implementation: No module named 'psycopg_c'
+2024-05-17 14:39:52,805 [DEBUG] in psycopg.pq: couldn't import psycopg 'binary' implementation: No module named 'psycopg_binary'
+2024-05-17 14:40:21,868 [WARNING] in django.request: Not Found: /favicon.ico
+2024-05-17 14:41:31,581 [DEBUG] in PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-05-17 14:41:31,581 [DEBUG] in PIL.PngImagePlugin: STREAM b'eXIf' 41 208
+2024-05-17 14:41:31,581 [DEBUG] in PIL.PngImagePlugin: STREAM b'iCCP' 261 388
+2024-05-17 14:41:31,581 [DEBUG] in PIL.PngImagePlugin: iCCP profile name b'ICC profile'
+2024-05-17 14:41:31,581 [DEBUG] in PIL.PngImagePlugin: Compression method 0
+2024-05-17 14:41:31,582 [DEBUG] in PIL.PngImagePlugin: STREAM b'iTXt' 661 3448
+2024-05-17 14:41:31,582 [DEBUG] in PIL.PngImagePlugin: STREAM b'bKGD' 4121 6
+2024-05-17 14:41:31,582 [DEBUG] in PIL.PngImagePlugin: b'bKGD' 4121 6 (unknown)
+2024-05-17 14:41:31,582 [DEBUG] in PIL.PngImagePlugin: STREAM b'pHYs' 4139 9
+2024-05-17 14:41:31,582 [DEBUG] in PIL.PngImagePlugin: STREAM b'tIME' 4160 7
+2024-05-17 14:41:31,582 [DEBUG] in PIL.PngImagePlugin: b'tIME' 4160 7 (unknown)
+2024-05-17 14:41:31,582 [DEBUG] in PIL.PngImagePlugin: STREAM b'IDAT' 4179 8192
+2024-05-17 14:41:31,582 [DEBUG] in PIL.Image: Importing BlpImagePlugin
+2024-05-17 14:41:31,584 [DEBUG] in PIL.Image: Importing BmpImagePlugin
+2024-05-17 14:41:31,584 [DEBUG] in PIL.Image: Importing BufrStubImagePlugin
+2024-05-17 14:41:31,584 [DEBUG] in PIL.Image: Importing CurImagePlugin
+2024-05-17 14:41:31,585 [DEBUG] in PIL.Image: Importing DcxImagePlugin
+2024-05-17 14:41:31,585 [DEBUG] in PIL.Image: Importing DdsImagePlugin
+2024-05-17 14:41:31,589 [DEBUG] in PIL.Image: Importing EpsImagePlugin
+2024-05-17 14:41:31,589 [DEBUG] in PIL.Image: Importing FitsImagePlugin
+2024-05-17 14:41:31,590 [DEBUG] in PIL.Image: Importing FliImagePlugin
+2024-05-17 14:41:31,590 [DEBUG] in PIL.Image: Importing FpxImagePlugin
+2024-05-17 14:41:31,590 [DEBUG] in PIL.Image: Image: failed to import FpxImagePlugin: No module named 'olefile'
+2024-05-17 14:41:31,590 [DEBUG] in PIL.Image: Importing FtexImagePlugin
+2024-05-17 14:41:31,591 [DEBUG] in PIL.Image: Importing GbrImagePlugin
+2024-05-17 14:41:31,591 [DEBUG] in PIL.Image: Importing GifImagePlugin
+2024-05-17 14:41:31,591 [DEBUG] in PIL.Image: Importing GribStubImagePlugin
+2024-05-17 14:41:31,591 [DEBUG] in PIL.Image: Importing Hdf5StubImagePlugin
+2024-05-17 14:41:31,592 [DEBUG] in PIL.Image: Importing IcnsImagePlugin
+2024-05-17 14:41:31,594 [DEBUG] in PIL.Image: Importing IcoImagePlugin
+2024-05-17 14:41:31,595 [DEBUG] in PIL.Image: Importing ImImagePlugin
+2024-05-17 14:41:31,595 [DEBUG] in PIL.Image: Importing ImtImagePlugin
+2024-05-17 14:41:31,596 [DEBUG] in PIL.Image: Importing IptcImagePlugin
+2024-05-17 14:41:31,597 [DEBUG] in PIL.Image: Importing JpegImagePlugin
+2024-05-17 14:41:31,597 [DEBUG] in PIL.Image: Importing Jpeg2KImagePlugin
+2024-05-17 14:41:31,597 [DEBUG] in PIL.Image: Importing McIdasImagePlugin
+2024-05-17 14:41:31,597 [DEBUG] in PIL.Image: Importing MicImagePlugin
+2024-05-17 14:41:31,597 [DEBUG] in PIL.Image: Image: failed to import MicImagePlugin: No module named 'olefile'
+2024-05-17 14:41:31,598 [DEBUG] in PIL.Image: Importing MpegImagePlugin
+2024-05-17 14:41:31,598 [DEBUG] in PIL.Image: Importing MpoImagePlugin
+2024-05-17 14:41:31,600 [DEBUG] in PIL.Image: Importing MspImagePlugin
+2024-05-17 14:41:31,600 [DEBUG] in PIL.Image: Importing PalmImagePlugin
+2024-05-17 14:41:31,601 [DEBUG] in PIL.Image: Importing PcdImagePlugin
+2024-05-17 14:41:31,602 [DEBUG] in PIL.Image: Importing PcxImagePlugin
+2024-05-17 14:41:31,602 [DEBUG] in PIL.Image: Importing PdfImagePlugin
+2024-05-17 14:41:31,608 [DEBUG] in PIL.Image: Importing PixarImagePlugin
+2024-05-17 14:41:31,608 [DEBUG] in PIL.Image: Importing PngImagePlugin
+2024-05-17 14:41:31,608 [DEBUG] in PIL.Image: Importing PpmImagePlugin
+2024-05-17 14:41:31,608 [DEBUG] in PIL.Image: Importing PsdImagePlugin
+2024-05-17 14:41:31,609 [DEBUG] in PIL.Image: Importing QoiImagePlugin
+2024-05-17 14:41:31,609 [DEBUG] in PIL.Image: Importing SgiImagePlugin
+2024-05-17 14:41:31,609 [DEBUG] in PIL.Image: Importing SpiderImagePlugin
+2024-05-17 14:41:31,610 [DEBUG] in PIL.Image: Importing SunImagePlugin
+2024-05-17 14:41:31,610 [DEBUG] in PIL.Image: Importing TgaImagePlugin
+2024-05-17 14:41:31,610 [DEBUG] in PIL.Image: Importing TiffImagePlugin
+2024-05-17 14:41:31,611 [DEBUG] in PIL.Image: Importing WebPImagePlugin
+2024-05-17 14:41:31,614 [DEBUG] in PIL.Image: Importing WmfImagePlugin
+2024-05-17 14:41:31,615 [DEBUG] in PIL.Image: Importing XbmImagePlugin
+2024-05-17 14:41:31,616 [DEBUG] in PIL.Image: Importing XpmImagePlugin
+2024-05-17 14:41:31,617 [DEBUG] in PIL.Image: Importing XVThumbImagePlugin
+2024-05-17 14:41:31,810 [WARNING] in django.request: Not Found: /favicon.ico
+2024-05-17 14:43:19,616 [WARNING] in django.request: Not Found: /favicon.ico
+2024-05-17 14:43:29,188 [INFO] in shop.views: Rendering shop index
+2024-05-17 15:03:00,767 [ERROR] in django.security.DisallowedHost: Invalid HTTP_HOST header: '0.0.0.0:8000'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '0.0.0.0:8000'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+2024-05-17 15:03:00,919 [WARNING] in django.request: Bad Request: /
+2024-05-17 15:03:01,161 [ERROR] in django.security.DisallowedHost: Invalid HTTP_HOST header: '0.0.0.0:8000'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/karen/Desktop/FirstDjangoProject/.venv/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '0.0.0.0:8000'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+2024-05-17 15:03:01,178 [WARNING] in django.request: Bad Request: /favicon.ico
+2024-05-17 15:03:22,530 [INFO] in django.utils.autoreload: /home/karen/Desktop/FirstDjangoProject/FirstDjangoProject/mysite/mysite/settings.py changed, reloading.
+2024-05-17 15:03:23,496 [DEBUG] in psycopg.pq: couldn't import psycopg 'c' implementation: No module named 'psycopg_c'
+2024-05-17 15:03:23,496 [DEBUG] in psycopg.pq: couldn't import psycopg 'binary' implementation: No module named 'psycopg_binary'
+2024-05-17 15:03:23,558 [INFO] in django.utils.autoreload: Watching for file changes with StatReloader
+2024-05-17 15:03:42,078 [INFO] in django.utils.autoreload: /home/karen/Desktop/FirstDjangoProject/FirstDjangoProject/mysite/mysite/settings.py changed, reloading.
+2024-05-17 15:03:42,495 [DEBUG] in psycopg.pq: couldn't import psycopg 'c' implementation: No module named 'psycopg_c'
+2024-05-17 15:03:42,495 [DEBUG] in psycopg.pq: couldn't import psycopg 'binary' implementation: No module named 'psycopg_binary'
+2024-05-17 15:03:42,540 [INFO] in django.utils.autoreload: Watching for file changes with StatReloader
+2024-05-17 15:03:45,100 [INFO] in shop.views: Rendering shop index

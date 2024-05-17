@@ -14,6 +14,20 @@ from pathlib import Path
 
 from django.utils.translation import gettext_lazy as _
 from decouple import config
+
+import sentry_sdk
+
+sentry_sdk.init(
+    dsn="https://9e116c512006e71599bf53f0d0b0ac98@o4507265139867648.ingest.de.sentry.io/4507272579186768",
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    traces_sample_rate=1.0,
+    # Set profiles_sample_rate to 1.0 to profile 100%
+    # of sampled transactions.
+    # We recommend adjusting this value in production.
+    profiles_sample_rate=1.0,
+)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 

@@ -2008,3 +2008,42 @@ django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '0.0.0.0:8000'.
 2024-05-17 15:03:42,495 [DEBUG] in psycopg.pq: couldn't import psycopg 'binary' implementation: No module named 'psycopg_binary'
 2024-05-17 15:03:42,540 [INFO] in django.utils.autoreload: Watching for file changes with StatReloader
 2024-05-17 15:03:45,100 [INFO] in shop.views: Rendering shop index
+2024-05-17 16:00:45,581 [DEBUG] in psycopg.pq: couldn't import psycopg 'c' implementation: No module named 'psycopg_c'
+2024-05-17 16:00:45,581 [DEBUG] in psycopg.pq: couldn't import psycopg 'binary' implementation: No module named 'psycopg_binary'
+2024-05-17 16:00:45,879 [DEBUG] in psycopg.pq: couldn't import psycopg 'c' implementation: No module named 'psycopg_c'
+2024-05-17 16:00:45,879 [DEBUG] in psycopg.pq: couldn't import psycopg 'binary' implementation: No module named 'psycopg_binary'
+2024-05-17 16:00:45,918 [INFO] in django.utils.autoreload: Watching for file changes with StatReloader
+2024-05-17 16:00:47,992 [DEBUG] in urllib3.connectionpool: Starting new HTTPS connection (1): o4507265139867648.ingest.de.sentry.io:443
+2024-05-17 16:00:48,000 [INFO] in shop.views: Rendering shop index
+2024-05-17 16:00:48,248 [DEBUG] in urllib3.connectionpool: https://o4507265139867648.ingest.de.sentry.io:443 "POST /api/4507272579186768/envelope/ HTTP/1.1" 200 0
+2024-05-17 16:00:48,326 [DEBUG] in urllib3.connectionpool: https://o4507265139867648.ingest.de.sentry.io:443 "POST /api/4507272579186768/envelope/ HTTP/1.1" 200 0
+2024-05-17 16:00:48,341 [WARNING] in django.request: Not Found: /favicon.ico
+2024-05-17 16:00:48,398 [DEBUG] in urllib3.connectionpool: https://o4507265139867648.ingest.de.sentry.io:443 "POST /api/4507272579186768/envelope/ HTTP/1.1" 200 0
+2024-05-17 16:00:48,470 [DEBUG] in urllib3.connectionpool: https://o4507265139867648.ingest.de.sentry.io:443 "POST /api/4507272579186768/envelope/ HTTP/1.1" 200 0
+2024-05-17 16:00:48,541 [DEBUG] in urllib3.connectionpool: https://o4507265139867648.ingest.de.sentry.io:443 "POST /api/4507272579186768/envelope/ HTTP/1.1" 200 0
+2024-05-17 16:00:48,611 [DEBUG] in urllib3.connectionpool: https://o4507265139867648.ingest.de.sentry.io:443 "POST /api/4507272579186768/envelope/ HTTP/1.1" 200 0
+2024-05-17 16:00:48,680 [DEBUG] in urllib3.connectionpool: https://o4507265139867648.ingest.de.sentry.io:443 "POST /api/4507272579186768/envelope/ HTTP/1.1" 200 0
+2024-05-17 16:00:48,748 [DEBUG] in urllib3.connectionpool: https://o4507265139867648.ingest.de.sentry.io:443 "POST /api/4507272579186768/envelope/ HTTP/1.1" 200 0
+2024-05-17 16:00:48,819 [DEBUG] in urllib3.connectionpool: https://o4507265139867648.ingest.de.sentry.io:443 "POST /api/4507272579186768/envelope/ HTTP/1.1" 200 0
+2024-05-17 16:01:36,102 [INFO] in shop.views: Rendering shop index
+2024-05-17 16:01:36,130 [INFO] in django.utils.autoreload: /home/karen/Desktop/FirstDjangoProject/FirstDjangoProject/mysite/blogapp/urls.py changed, reloading.
+2024-05-17 16:01:36,200 [WARNING] in django.request: Not Found: /favicon.ico
+2024-05-17 16:01:36,202 [DEBUG] in urllib3.connectionpool: https://o4507265139867648.ingest.de.sentry.io:443 "POST /api/4507272579186768/envelope/ HTTP/1.1" 200 0
+2024-05-17 16:01:36,269 [DEBUG] in urllib3.connectionpool: https://o4507265139867648.ingest.de.sentry.io:443 "POST /api/4507272579186768/envelope/ HTTP/1.1" 200 0
+2024-05-17 16:01:36,337 [DEBUG] in urllib3.connectionpool: https://o4507265139867648.ingest.de.sentry.io:443 "POST /api/4507272579186768/envelope/ HTTP/1.1" 200 0
+2024-05-17 16:01:36,405 [DEBUG] in urllib3.connectionpool: https://o4507265139867648.ingest.de.sentry.io:443 "POST /api/4507272579186768/envelope/ HTTP/1.1" 200 0
+2024-05-17 16:01:37,007 [DEBUG] in psycopg.pq: couldn't import psycopg 'c' implementation: No module named 'psycopg_c'
+2024-05-17 16:01:37,007 [DEBUG] in psycopg.pq: couldn't import psycopg 'binary' implementation: No module named 'psycopg_binary'
+2024-05-17 16:01:37,070 [INFO] in django.utils.autoreload: Watching for file changes with StatReloader
+2024-05-17 16:01:37,207 [DEBUG] in urllib3.connectionpool: Starting new HTTPS connection (1): o4507265139867648.ingest.de.sentry.io:443
+2024-05-17 16:01:37,543 [DEBUG] in urllib3.connectionpool: https://o4507265139867648.ingest.de.sentry.io:443 "POST /api/4507272579186768/envelope/ HTTP/1.1" 200 0
+2024-05-17 16:01:51,595 [INFO] in django.utils.autoreload: /home/karen/Desktop/FirstDjangoProject/FirstDjangoProject/mysite/blogapp/urls.py changed, reloading.
+2024-05-17 16:01:51,970 [DEBUG] in psycopg.pq: couldn't import psycopg 'c' implementation: No module named 'psycopg_c'
+2024-05-17 16:01:51,971 [DEBUG] in psycopg.pq: couldn't import psycopg 'binary' implementation: No module named 'psycopg_binary'
+2024-05-17 16:01:52,019 [INFO] in django.utils.autoreload: Watching for file changes with StatReloader
+2024-05-17 16:01:55,919 [INFO] in shop.views: Rendering shop index
+2024-05-17 16:01:56,056 [DEBUG] in urllib3.connectionpool: Starting new HTTPS connection (1): o4507265139867648.ingest.de.sentry.io:443
+2024-05-17 16:01:56,283 [DEBUG] in urllib3.connectionpool: https://o4507265139867648.ingest.de.sentry.io:443 "POST /api/4507272579186768/envelope/ HTTP/1.1" 200 0
+2024-05-17 16:01:56,375 [INFO] in shop.views: Rendering shop index
+2024-05-17 16:01:56,462 [DEBUG] in urllib3.connectionpool: https://o4507265139867648.ingest.de.sentry.io:443 "POST /api/4507272579186768/envelope/ HTTP/1.1" 200 0
+2024-05-17 16:02:56,124 [DEBUG] in urllib3.connectionpool: https://o4507265139867648.ingest.de.sentry.io:443 "POST /api/4507272579186768/envelope/ HTTP/1.1" 200 0
